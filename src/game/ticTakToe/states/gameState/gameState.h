@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../state.h"
+#include "../../../state/state.h"
 #include "../../gui/button/button.h"
 #include "../../ai/ai.h"
 
@@ -20,7 +20,7 @@ private:
 
     Ai m_ai;
 
-    bool m_player;
+    bool m_player = false;
     bool m_useAi = true;
     bool m_aiTurn = false;
     bool m_endGame = false;

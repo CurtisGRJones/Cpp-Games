@@ -3,8 +3,8 @@
 
 #include "game.h"
 
-#include "state/gameState/gameState.h"
-#include "state/menuState/menuState.h"
+#include "ticTakToe/states/gameState/gameState.h"
+#include "ticTakToe/states/menuState/menuState.h"
 
 Game::Game()
 {

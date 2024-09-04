@@ -189,7 +189,7 @@ void GameState::tick()
         const Uint8 move = m_ai.getMove(&duplicateBoardState, this->m_aiTurn);
         if (move >= 0 && move < 9 && this->m_boardState[move] == 0)
         {
-            this->m_boardState[move] = int(m_aiTurn) + 1;
+            this->m_boardState[move] = int(this->m_aiTurn) + 1;
             this->m_player = !this->m_player;
         }
     }
