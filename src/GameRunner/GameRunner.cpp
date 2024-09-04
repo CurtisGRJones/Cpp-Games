@@ -3,20 +3,20 @@
 
 #include "GameRunner.h"
 
-GameRunenr::GameRunenr()
+GameRunner::GameRunner()
 {
 }
 
-GameRunenr::~GameRunenr()
+GameRunner::~GameRunner()
 {
 }
 
-void GameRunenr::tick()
+void GameRunner::tick()
 {
     SDL_Delay(16);
 }
 
-void GameRunenr::eventHandler()
+void GameRunner::eventHandler()
 {
     while (SDL_PollEvent(&this->m_event))
     {
@@ -31,15 +31,23 @@ void GameRunenr::eventHandler()
     }
 }
 
-bool GameRunenr::isRunning()
+bool GameRunner::isRunning()
 {
     return this->m_running;
 }
 
-void GameRunenr::quitGame()
+void GameRunner::quitGame()
 {
     SDL_Quit();
     this->m_running = false;
+}
+
+void GameRunner::setGame(GameKey gameKey) {
+    this->setGame(this->m_games[gameKey]);
+}
+
+void GameRunner::setGame(std::shared_ptr<GameBase> game){
+    this->m_currentGame = game;
 }
 
 #endif

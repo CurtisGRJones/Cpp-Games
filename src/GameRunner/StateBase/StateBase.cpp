@@ -4,7 +4,7 @@
 #include "StateBase.h"
 #include "../GameRunner.h"
 
-StateBase::StateBase(GameRunenr *game)
+StateBase::StateBase(GameRunner *game)
     : m_game(game)
 {
 }

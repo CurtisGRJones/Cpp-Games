@@ -11,30 +11,40 @@ find_package(SDL2 REQUIRED)
 
 add_executable(Games 
     src/main.cpp
-    src/game/gui/button/button.cpp
-    src/game/gui/button/button.h
-    src/game/window/window.cpp
-    src/game/window/window.h
-    src/game/game.cpp
-    src/game/game.h
-    src/game/state/mainMenu/mainMenu.cpp
-    src/game/state/mainMenu/mainMenu.h
-    src/game/state/state.h
-    src/game/state/state.cpp
 
-    #Tic Tac Toe
-    src/game/ticTakToe/ticTacToe.cpp
-    src/game/ticTakToe/ticTacToe.h
-    src/game/ticTakToe/ai/ai.cpp
-    src/game/ticTakToe/ai/ai.h
-    src/game/ticTakToe/states/gameState/gameState.cpp
-    src/game/ticTakToe/states/gameState/gameState.h
-    src/game/ticTakToe/states/menuState/menuState.cpp
-    src/game/ticTakToe/states/menuState/menuState.h
-    
-    
+    # GameRunner
+    src/GameRunner/GameBase/GameBase.cpp
+    src/GameRunner/GameBase/GameBase.h
+    src/GameRunner/GameRunner.cpp
+    src/GameRunner/GameRunner.h
+
+    # GUI
+    src/GameRunner/GUI/Button/Button.cpp
+    src/GameRunner/GUI/Button/Button.h
+
+    # StateBase
+    src/GameRunner/StateBase/mainMenu/mainMenu.cpp
+    src/GameRunner/StateBase/mainMenu/mainMenu.h
+    src/GameRunner/StateBase/StateBase.cpp
+    src/GameRunner/StateBase/StateBase.h
+
+    # Window
+    src/GameRunner/Window/Window.cpp
+    src/GameRunner/Window/Window.h
+
+    # TicTacToe
+    src/GameRunner/Games/TicTakToe/TicTacToe.cpp
+    src/GameRunner/Games/TicTakToe/TicTacToe.h
+    src/GameRunner/Games/TicTakToe/Ai/Ai.cpp
+    src/GameRunner/Games/TicTakToe/Ai/Ai.h
+    src/GameRunner/Games/TicTakToe/States/GameState/GameState.cpp
+    src/GameRunner/Games/TicTakToe/States/GameState/GameState.h
+    src/GameRunner/Games/TicTakToe/States/MenuState/MenuState.cpp
+    src/GameRunner/Games/TicTakToe/States/MenuState/MenuState.h
+
     # Gobblet
-
+    src/GameRunner/Games/Gobblet/Gobblet.cpp
+    src/GameRunner/Games/Gobblet/Gobblet.h
 )
 
 target_include_directories(Games PRIVATE ${SDL2_INCLUDE_DIR})

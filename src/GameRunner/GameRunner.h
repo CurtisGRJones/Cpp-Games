@@ -14,7 +14,7 @@ enum class GameKey
     GOBBLET,
 };
 
-class GameRunenr
+class GameRunner
 {
 public:
 private:
@@ -24,12 +24,12 @@ private:
     float m_lastTickTime = 0.0f;
     SDL_Event m_event;
     
-    std::map<GameKey, std::shared_ptr<GameBase>> m_gameMap;
+    std::map<GameKey, std::shared_ptr<GameBase>> m_games;
     std::shared_ptr<GameBase> m_currentGame;
 
 public:
-    GameRunenr();
-    ~GameRunenr();
+    GameRunner();
+    ~GameRunner();
 
     void tick();
     void eventHandler();
@@ -38,7 +38,7 @@ public:
     // TODO add an exit status
     void quitGame();
 
-    void changeGame(GameKey gameKey);
-    void changeGame(std::shared_ptr<GameBase> game);
+    void setGame(GameKey gameKey);
+    void setGame(std::shared_ptr<GameBase> game);
 private:
 };

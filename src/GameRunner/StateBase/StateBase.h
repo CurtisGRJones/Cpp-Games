@@ -3,14 +3,14 @@
 #include <SDL2/SDL.h>
 #include "../window/window.h"
 
-class GameRunenr;
+class GameRunner;
 
 class StateBase
 {
 protected:
-    GameRunenr *m_game;
+    GameRunner *m_game;
 public:
-    StateBase(GameRunenr *m_game);
+    StateBase(GameRunner *m_game);
     ~StateBase();
     virtual void eventHandler(SDL_Event *event) {};
     virtual void tick() {};
