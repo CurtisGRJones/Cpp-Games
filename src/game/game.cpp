@@ -4,12 +4,17 @@
 #include "game.h"
 
 #include "state/gameState/gameState.h"
+#include "state/menuState/menuState.h"
 
 Game::Game()
 {
     this->m_states.insert(
         std::pair<StateKey, std::shared_ptr<GameState>>(
             StateKey::GAME, std::make_shared<GameState>(this)));
+    
+    this->m_states.insert(
+        std::pair<StateKey, std::shared_ptr<MenuState>>(
+            StateKey::MENU, std::make_shared<MenuState>(this)));
 
     this->m_currentState = this->m_states[StateKey::GAME];
 }
@@ -20,7 +25,7 @@ Game::~Game()
 
 void Game::tick()
 {
-    // TODO throttle delay
+    // have fixed delays along this whole function
     this->eventHandler();
     this->m_currentState->tick();
     this->m_currentState->draw(&(this->m_window));

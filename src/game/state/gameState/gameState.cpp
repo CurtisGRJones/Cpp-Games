@@ -15,7 +15,7 @@ GameState::GameState(Game *game)
               },
               [](Window *window, SDL_Rect *rect)
               {
-                  window->setDrawColour(255, 0, 0, 255);
+                  window->setDrawColour(255, 255, 0, 255);
                   window->drawFillRect(rect->x, rect->y, rect->w, rect->h);
               })),
     m_menuButton(
@@ -59,6 +59,7 @@ GameState::~GameState()
 
 void GameState::draw(Window *window)
 {
+    window->clear();
     window->setDrawColour(0, 0, 0, 255);
     window->setBackgroundColour(255, 255, 255, 255);
 
@@ -102,6 +103,10 @@ void GameState::eventHandler(SDL_Event *event)
     {
     case SDL_MOUSEBUTTONDOWN:
         if (this->m_resetButton.handleMouseButtonEvent(&(event->button)))
+        {
+            break;
+        }
+        if (this->m_menuButton.handleMouseButtonEvent(&(event->button)))
         {
             break;
         }

@@ -1,7 +1,5 @@
 #pragma once
 
-#include <iostream>
-
 #include <memory>
 #include <map>
 #include <string>
@@ -14,8 +12,8 @@
 enum class StateKey
 {
     GAME,
-    WIN,
-    MENU
+    MENU,
+    WIN
 };
 
 class Game

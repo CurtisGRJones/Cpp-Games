@@ -17,6 +17,8 @@ add_executable(TikTakToe
     src/game/gui/button/button.h
     src/game/state/gameState/gameState.cpp
     src/game/state/gameState/gameState.h
+    src/game/state/menuState/menuState.cpp
+    src/game/state/menuState/menuState.h
     src/game/state/state.h
     src/game/state/state.cpp
     src/game/window/window.cpp

@@ -49,6 +49,7 @@ void Button::draw(Window *window)
 {
     if (this->m_draw)
     {
+        // TODO save and revert draw colour
         this->m_draw(window, &this->rect);
     }
 }
