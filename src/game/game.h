@@ -76,6 +76,7 @@ void Game::eventHandler()
         switch (this->m_event.type){
             case SDL_QUIT:
                 this->quitGame();
+                break;
             default:
                 this->m_currentState->eventHandler(&(this->m_event));
         }
