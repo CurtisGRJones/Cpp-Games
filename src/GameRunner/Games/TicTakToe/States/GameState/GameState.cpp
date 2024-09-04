@@ -6,8 +6,8 @@
 
 #include <iostream>
 
-GameState::GameState(Game *game)
-    : State(game),
+GameState::GameState(GameRunenr *game)
+    : StateBase(game),
       m_ai(Ai(
           [this](std::array<uint8_t, 9> *boardState)
           {

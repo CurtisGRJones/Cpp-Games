@@ -4,6 +4,6 @@ class MainMenu: public State
 {
 private:
 public:
-    MainMenu(Game *game);
+    MainMenu(GameRunenr *game);
     ~MainMenu();
 };

@@ -5,12 +5,12 @@
 #include "../../../state/state.h"
 #include "../../gui/button/button.h"
 
-class MenuState : public State
+class MenuState : public StateBase
 {
 private:
     std::vector<Button> buttons;
 public:
-    MenuState(Game *game);
+    MenuState(GameRunenr *game);
     ~MenuState();
 
     void eventHandler(SDL_Event *event);

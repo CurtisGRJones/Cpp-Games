@@ -3,7 +3,7 @@
 
 #include "mainMenu.h"
 
-MainMenu::MainMenu(Game *game)
+MainMenu::MainMenu(GameRunenr *game)
     : State(game)
 {
 }

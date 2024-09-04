@@ -19,16 +19,19 @@ add_executable(Games
     src/game/game.h
     src/game/state/mainMenu/mainMenu.cpp
     src/game/state/mainMenu/mainMenu.h
+    src/game/state/state.h
+    src/game/state/state.cpp
 
     #Tic Tac Toe
-    src/game/tikTakToe/ai/ai.cpp
-    src/game/tikTakToe/ai/ai.h
-    src/game/tikTakToe/state/gameState/gameState.cpp
-    src/game/tikTakToe/state/gameState/gameState.h
-    src/game/tikTakToe/state/menuState/menuState.cpp
-    src/game/tikTakToe/state/menuState/menuState.h
-    src/game/tikTakToe/state/state.h
-    src/game/tikTakToe/state/state.cpp
+    src/game/ticTakToe/ticTacToe.cpp
+    src/game/ticTakToe/ticTacToe.h
+    src/game/ticTakToe/ai/ai.cpp
+    src/game/ticTakToe/ai/ai.h
+    src/game/ticTakToe/states/gameState/gameState.cpp
+    src/game/ticTakToe/states/gameState/gameState.h
+    src/game/ticTakToe/states/menuState/menuState.cpp
+    src/game/ticTakToe/states/menuState/menuState.h
+    
     
     # Gobblet
 

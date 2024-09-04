@@ -1,15 +1,15 @@
-#include "game/game.h"
+#include "GameRunner/GameRunner.h"
 
 #include <random>
 #include <chrono>
 
 int main(int argc, char* argv[]) {
-    Game game;
+    GameRunner runner;
 
     std::srand(static_cast<unsigned>(std::time(nullptr)));
 
-    while( game.isRunning() ) {
-        game.tick();
+    while( runner.isRunning() ) {
+        runner.tick();
     }
 
     return 0;

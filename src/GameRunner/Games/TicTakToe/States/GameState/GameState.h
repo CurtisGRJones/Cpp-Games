@@ -6,7 +6,7 @@
 
 #include <vector>
 
-class GameState : public State
+class GameState : public StateBase
 {
 private:
     const Uint8 m_SPACES_COUNT = 9;
@@ -52,7 +52,7 @@ private:
     void checkBoardForEndGame();
 
 public:
-    GameState(Game *game);
+    GameState(GameRunenr *game);
     ~GameState();
 
     void eventHandler(SDL_Event *event);

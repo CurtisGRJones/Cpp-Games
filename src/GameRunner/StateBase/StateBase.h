@@ -3,15 +3,15 @@
 #include <SDL2/SDL.h>
 #include "../window/window.h"
 
-class Game;
+class GameRunenr;
 
-class State
+class StateBase
 {
 protected:
-    Game *m_game;
+    GameRunenr *m_game;
 public:
-    State(Game *m_game);
-    ~State();
+    StateBase(GameRunenr *m_game);
+    ~StateBase();
     virtual void eventHandler(SDL_Event *event) {};
     virtual void tick() {};
     virtual void draw(Window* window) {};
