@@ -4,15 +4,17 @@
 #include "../../gui/button/button.h"
 #include "../../ai/ai.h"
 
+#include <vector>
+
 class GameState : public State
 {
 private:
     const Uint8 m_SPACES_COUNT = 9;
 
     // TODO compress to use logical expreessions to represent this
-    Uint8 m_boardState[9];
+    std::array<uint8_t, 9> m_boardState;
 
-    std::unique_ptr<Button> m_spaceButtons[9];
+    std::vector<Button> m_spaceButtons[9];
     Button m_resetButton;
     Button m_menuButton;
 
@@ -20,7 +22,7 @@ private:
 
     bool m_player;
     bool m_useAi = true;
-    bool m_aiTurn = true;
+    bool m_aiTurn = false;
     bool m_endGame = false;
 
     // TODO fix this madness
@@ -42,7 +44,11 @@ private:
     int r = l + spacing;
 
 private:
-    std::unique_ptr<Uint8[]> copyBoardState();
+    std::array<uint8_t, 9> copyBoardState();
+    Uint8 checkBoardForWin();
+    Uint8 checkBoardForWin(std::array<uint8_t, 9> *boardState);
+    bool checkBoardIsFull();
+    bool checkBoardIsFull(std::array<uint8_t, 9> *boardState);
     void checkBoardForEndGame();
 
 public:
