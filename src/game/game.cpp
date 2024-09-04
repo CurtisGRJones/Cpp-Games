@@ -1,4 +1,9 @@
+#ifndef GAME_H
+#define GAME_H
+
 #include "game.h"
+
+#include "state/gameState/gameState.h"
 
 Game::Game()
 {
@@ -21,7 +26,6 @@ void Game::tick()
     this->m_currentState->draw(&(this->m_window));
     this->m_window.pushRenderToWindow();
 
-    // 16
     SDL_Delay(16);
 }
 
@@ -60,3 +64,5 @@ void Game::changeState(std::shared_ptr<State> newState)
 {
     this->m_currentState = newState;
 }
+
+#endif

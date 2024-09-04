@@ -3,6 +3,8 @@
 #include <SDL2/SDL.h>
 #include <functional>
 
+#include "../../window/window.h"
+
 class Button
 {
 private:

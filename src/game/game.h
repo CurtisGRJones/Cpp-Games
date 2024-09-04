@@ -8,20 +8,19 @@
 #include <SDL2/SDL.h>
 
 #include "state/state.h"
-#include "state/gameState/gameState.h"
 
 #include "window/window.h"
+
+enum class StateKey
+{
+    GAME,
+    WIN,
+    MENU
+};
 
 class Game
 {
 public:
-    enum class StateKey
-    {
-        GAME,
-        WIN,
-        MENU
-    };
-
 private:
     Window m_window;
 

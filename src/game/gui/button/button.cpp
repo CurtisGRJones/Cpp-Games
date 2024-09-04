@@ -1,5 +1,7 @@
+#ifndef BUTTON_H
+#define BUTTON_H
+
 #include "button.h"
-#include "../../window/window.h"
 
 Button::Button(int x, int y, int w, int h, std::function<void()> onClick)
     : m_onClick(onClick)
@@ -50,3 +52,5 @@ void Button::draw(Window *window)
         this->m_draw(window, &this->rect);
     }
 }
+
+#endif

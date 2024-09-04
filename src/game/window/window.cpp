@@ -1,3 +1,6 @@
+#ifndef WINDOW_H
+#define WINDOW_H
+
 #include "window.h"
 
 Window::Window()
@@ -164,3 +167,5 @@ bool Window::clear() {
     SDL_RenderClear(this->m_renderer.get());
     return true;
 }
+
+#endif

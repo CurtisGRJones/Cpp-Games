@@ -36,7 +36,7 @@ private:
     int r = l + spacing;
 
 public:
-    GameState();
+    GameState(Game *game);
     ~GameState();
 
     void eventHandler(SDL_Event *event);

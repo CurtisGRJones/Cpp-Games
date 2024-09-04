@@ -1,7 +1,12 @@
-#include "gameState.h"
+#ifndef GAMESTATE_H
+#define GAMESTATE_H
 
-GameState::GameState()
-    : m_resetButton(
+#include "gameState.h"
+#include "../../game.h"
+
+GameState::GameState(Game *game)
+    : State(game),
+    m_resetButton(
           Button(
               25, 25, 100, 50,
               [this]()
@@ -18,7 +23,7 @@ GameState::GameState()
               475, 25, 100, 50,
               [this]()
               {
-                  this->reset();
+                  this->m_game->changeState(StateKey::MENU);
               },
               [](Window *window, SDL_Rect *rect)
               {
@@ -87,6 +92,7 @@ void GameState::draw(Window *window)
     }
 
     this->m_resetButton.draw(window);
+    this->m_menuButton.draw(window);
 }
 
 void GameState::eventHandler(SDL_Event *event)
@@ -117,3 +123,5 @@ void GameState::reset()
         this->m_boardState[i] = 0;
     }
 }
+
+#endif
