@@ -13,7 +13,7 @@ sudo apt-get install libsdl2-dev
 mkdir build
 cd build
 cmake ..
-build
+make
 ./Games
 ```
 
