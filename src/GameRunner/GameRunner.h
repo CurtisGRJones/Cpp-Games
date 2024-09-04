@@ -10,6 +10,7 @@
 
 enum class GameKey
 {
+    MAIN_MENU,
     TIC_TAC_TOE,
     GOBBLET,
 };
@@ -27,6 +28,7 @@ private:
     std::map<GameKey, std::shared_ptr<GameBase>> m_games;
     std::shared_ptr<GameBase> m_currentGame;
 
+    // TODO add main menu screen
 public:
     GameRunner();
     ~GameRunner();

@@ -5,6 +5,8 @@
 
 GameRunner::GameRunner()
 {
+    this->m_games[GameKey::TIC_TAC_TOE] = TicTacToe 
+    this->m_currentGame = this->m_games[GameKey::MAIN_MENU];
 }
 
 GameRunner::~GameRunner()
