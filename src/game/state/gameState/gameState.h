@@ -2,6 +2,7 @@
 
 #include "../state.h"
 #include "../../gui/button/button.h"
+#include "../../ai/ai.h"
 
 class GameState : public State
 {
@@ -15,7 +16,12 @@ private:
     Button m_resetButton;
     Button m_menuButton;
 
-    bool player;
+    Ai m_ai;
+
+    bool m_player;
+    bool m_useAi = true;
+    bool m_aiTurn = true;
+    bool m_endGame = false;
 
     // TODO fix this madness
     int screenWidth = 600;
@@ -35,12 +41,17 @@ private:
     int l = borderWidth + spacing - int(lineWidth / 2);
     int r = l + spacing;
 
+private:
+    std::unique_ptr<Uint8[]> copyBoardState();
+    void checkBoardForEndGame();
+
 public:
     GameState(Game *game);
     ~GameState();
 
     void eventHandler(SDL_Event *event);
     void draw(Window *window);
+    void tick();
 
     void reset();
 };

@@ -4,6 +4,28 @@
 #include "gameState.h"
 #include "../../game.h"
 
+#include <iostream>
+
+std::unique_ptr<Uint8[]> GameState::copyBoardState() {
+    Uint8 size = 9;
+    std::unique_ptr<Uint8[]> newArray(new Uint8[size]);
+    std::copy(this->m_boardState, this->m_boardState + size, newArray.get());
+    return newArray;
+}
+
+void GameState::checkBoardForEndGame() {
+    bool isBoardFull = true;
+
+    for (int i = 0; i < 9; i++) {
+        if (this->m_boardState == 0) {
+            isBoardFull = false;
+            break;
+        }
+    }
+
+    // todo check for win condition
+}
+
 GameState::GameState(Game *game)
     : State(game),
     m_resetButton(
@@ -44,10 +66,10 @@ GameState::GameState(Game *game)
             spacing,
             [this, i]()
             {
-                if (this->m_boardState[i] == 0)
+                if ( !(this->m_useAi && this->m_aiTurn == this->m_player) && this->m_boardState[i] == 0)
                 {
-                    this->m_boardState[i] = int(this->player) + 1;
-                    this->player = !this->player;
+                    this->m_boardState[i] = int(this->m_player) + 1;
+                    this->m_player = !this->m_player;
                 }
             });
     }
@@ -96,6 +118,18 @@ void GameState::draw(Window *window)
     this->m_menuButton.draw(window);
 }
 
+void GameState::tick() {
+    if ( this->m_useAi && this->m_aiTurn == this->m_player && !this->m_endGame ) {
+        const Uint8 move = m_ai.getMove(this->copyBoardState());
+        if( move >= 0 && move < 9 && this->m_boardState[move] == 0 ) {
+            this->m_boardState[move] = int(m_aiTurn) + 1;
+            this->m_player = !this->m_player;
+        }
+    }
+
+    this->checkBoardForEndGame();
+}
+
 void GameState::eventHandler(SDL_Event *event)
 {
     // TODO find a way to automaticallt register when a button is pressed
@@ -122,7 +156,7 @@ void GameState::eventHandler(SDL_Event *event)
 
 void GameState::reset()
 {
-    this->player = false;
+    this->m_player = false;
     for (Uint8 i = 0; i < this->m_SPACES_COUNT; i++)
     {
         this->m_boardState[i] = 0;

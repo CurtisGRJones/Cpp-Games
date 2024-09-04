@@ -13,6 +13,8 @@ add_executable(TikTakToe
     src/main.cpp
     src/game/game.cpp
     src/game/game.h
+    src/game/ai/ai.cpp
+    src/game/ai/ai.h
     src/game/gui/button/button.cpp
     src/game/gui/button/button.h
     src/game/state/gameState/gameState.cpp
