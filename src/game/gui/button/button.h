@@ -8,16 +8,16 @@ private:
     int m_x1, m_x2, m_y1, m_y2;
 
     std::function<void()> m_onClick;
-    std::function<void()> m_draw;
+    std::function<void(Window* window)> m_draw;
 
 public:
     Button(int x1, int y1, int x2, int y2, std::function<void()> onClick);
-    Button(int x1, int y1, int x2, int y2, std::function<void()> onClick, std::function<void()> draw);
+    Button(int x1, int y1, int x2, int y2, std::function<void()> onClick, std::function<void(Window* window)> draw);
     ~Button();
 
     // TODO add resize
-    void handleMouseButtonEvent(SDL_MouseButtonEvent *event);
-    void draw();
+    bool handleMouseButtonEvent(SDL_MouseButtonEvent *event);
+    void draw(Window* window);
 };
 
 Button::Button(int x1, int y1, int x2, int y2, std::function<void()> onClick)
@@ -26,7 +26,7 @@ Button::Button(int x1, int y1, int x2, int y2, std::function<void()> onClick)
 {
 }
 
-Button::Button(int x1, int y1, int x2, int y2, std::function<void()> onClick, std::function<void()> draw)
+Button::Button(int x1, int y1, int x2, int y2, std::function<void()> onClick, std::function<void(Window* window)> draw)
     : m_x1(x1), m_x2(x2), m_y1(y1), m_y2(y2),
       m_onClick(onClick), m_draw(draw)
 {
@@ -36,7 +36,7 @@ Button::~Button()
 {
 }
 
-void Button::handleMouseButtonEvent(SDL_MouseButtonEvent *event)
+bool Button::handleMouseButtonEvent(SDL_MouseButtonEvent *event)
 {
     if (
         event->x > this->m_x1 &&
@@ -47,14 +47,16 @@ void Button::handleMouseButtonEvent(SDL_MouseButtonEvent *event)
         if (this->m_onClick)
         {
             this->m_onClick();
+            return true;
         }
     }
+    return false;
 }
 
-void Button::draw()
+void Button::draw(Window* window)
 {
     if (this->m_draw)
     {
-        this->draw();
+        this->m_draw(window);
     }
 }

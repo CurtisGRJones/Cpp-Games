@@ -23,7 +23,7 @@ public:
     bool clear();
 private:
     const int SCREEN_WIDTH = 600;
-    const int SCREEN_HEIGHT = 600;
+    const int SCREEN_HEIGHT = 700;
 
     std::unique_ptr<SDL_Window, decltype(&SDL_DestroyWindow)> m_window;
     std::unique_ptr<SDL_Renderer, decltype(&SDL_DestroyRenderer)> m_renderer;

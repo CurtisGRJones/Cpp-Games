@@ -1,5 +1,7 @@
 #pragma once
 
+#include <iostream>
+
 #include <memory>
 #include <map>
 #include <string>
@@ -66,6 +68,7 @@ void Game::tick()
     this->m_currentState->draw(&(this->m_window));
     this->m_window.pushRenderToWindow();
 
+    // 16
     SDL_Delay(16);
 }
 
