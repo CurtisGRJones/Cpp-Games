@@ -1,6 +1,6 @@
 # Cpp-Tick-Tak-Toe
 
-Simple project to create a game of tik-tak-toe using C++
+Simple project to create a game of tic-tak-toe using C++
 
 ## Setup
 

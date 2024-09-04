@@ -12,7 +12,7 @@ Window::Window()
     }
 
     SDL_Window* window = SDL_CreateWindow(
-        "Tik Tak Toe",
+        "Tic Tak Toe",
         SDL_WINDOWPOS_CENTERED,
         SDL_WINDOWPOS_CENTERED,
         this->SCREEN_WIDTH,

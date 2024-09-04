@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.16)
-project(TikTakToe)
+project(TicTakToe)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -9,7 +9,7 @@ set(SDL2_LIBRARIES "/usr/lib/x86_64-linux-gnu/libSDL2.so")
 
 find_package(SDL2 REQUIRED)
 
-add_executable(TikTakToe 
+add_executable(TicTakToe 
     src/main.cpp
     src/game/game.cpp
     src/game/game.h
@@ -27,5 +27,5 @@ add_executable(TikTakToe
     src/game/window/window.h
 )
 
-target_include_directories(TikTakToe PRIVATE ${SDL2_INCLUDE_DIR})
-target_link_libraries(TikTakToe ${SDL2_LIBRARIES})
+target_include_directories(TicTakToe PRIVATE ${SDL2_INCLUDE_DIR})
+target_link_libraries(TicTakToe ${SDL2_LIBRARIES})
