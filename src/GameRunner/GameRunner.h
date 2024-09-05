@@ -1,7 +1,7 @@
 #pragma once
 
 #include <memory>
-#include <map>
+#include <unordered_map>
 #include <string>
 #include <SDL2/SDL.h>
 
@@ -25,7 +25,7 @@ private:
     float m_lastTickTime = 0.0f;
     SDL_Event m_event;
     
-    std::map<GameKey, std::shared_ptr<GameBase>> m_games;
+    std::unordered_map<GameKey, std::shared_ptr<GameBase>> m_games;
     std::shared_ptr<GameBase> m_currentGame;
 
     // TODO add main menu screen
