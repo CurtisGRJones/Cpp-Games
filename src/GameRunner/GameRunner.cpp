@@ -1,6 +1,3 @@
-#ifndef GAMERUNNER_H
-#define GAMERUNNER_H
-
 #include "GameRunner.h"
 
 GameRunner::GameRunner()
@@ -51,5 +48,3 @@ void GameRunner::setGame(GameKey gameKey) {
 void GameRunner::setGame(std::shared_ptr<GameBase> game){
     this->m_currentGame = game;
 }
-
-#endif

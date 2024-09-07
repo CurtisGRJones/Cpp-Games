@@ -1,6 +1,3 @@
-#ifndef MAINMENU_H
-#define MAINMENU_H
-
 #include "mainMenu.h"
 
 MainMenu::MainMenu(GameRunenr *game)
@@ -11,5 +8,3 @@ MainMenu::MainMenu(GameRunenr *game)
 MainMenu::~MainMenu()
 {
 }
-
-#endif
