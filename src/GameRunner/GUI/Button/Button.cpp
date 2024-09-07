@@ -1,6 +1,3 @@
-#ifndef BUTTON_H
-#define BUTTON_H
-
 #include "button.h"
 
 Button::Button(int x, int y, int w, int h, std::function<void()> onClick)
@@ -53,5 +50,3 @@ void Button::draw(Window *window)
         this->m_draw(window, &this->rect);
     }
 }
-
-#endif

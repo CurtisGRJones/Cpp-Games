@@ -1,6 +1,3 @@
-#ifndef GAMESTATE_H
-#define GAMESTATE_H
-
 #include "gameState.h"
 #include "../../game.h"
 
@@ -227,5 +224,3 @@ void GameState::reset()
         this->m_boardState[i] = 0;
     }
 }
-
-#endif
