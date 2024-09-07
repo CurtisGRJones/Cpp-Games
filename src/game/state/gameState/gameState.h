@@ -22,7 +22,7 @@ private:
 
     bool m_player;
     bool m_useAi = true;
-    bool m_aiTurn = false;
+    bool m_aiTurn = true;
     bool m_endGame = false;
 
     // TODO fix this madness

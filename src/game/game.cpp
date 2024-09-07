@@ -1,6 +1,3 @@
-#ifndef GAME_H
-#define GAME_H
-
 #include "game.h"
 
 #include "state/gameState/gameState.h"
@@ -69,5 +66,3 @@ void Game::changeState(std::shared_ptr<State> newState)
 {
     this->m_currentState = newState;
 }
-
-#endif

@@ -1,6 +1,3 @@
-#ifndef AI_H
-#define AI_H
-
 #include "ai.h"
 
 #include <algorithm>
@@ -88,4 +85,3 @@ float Ai::getMiniMaxScore(std::array<uint8_t, 9> *boardState, uint8_t aiId, bool
 
     return bestScore / 2.0f;
 }
-#endif

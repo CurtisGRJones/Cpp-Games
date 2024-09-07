@@ -1,6 +1,3 @@
-#ifndef MENUSTATE_H
-#define MENUSTATE_H
-
 #include "menuState.h"
 #include "../../game.h"
 
@@ -58,5 +55,3 @@ void MenuState::draw(Window *window) {
     for(Button& i : this->buttons) 
         i.draw(window);
 }
-
-#endif
